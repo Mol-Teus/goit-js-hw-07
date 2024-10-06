@@ -24,3 +24,19 @@ const images = [
     alt: "Lighthouse Coast Sea",
   }
 ];
+
+// Отримання елемента ul.gallery
+const gallery = document.querySelector('.gallery');
+
+// Створення розмітки для кожного зображення
+const galleryMarkup = images
+  .map(image => `<li><img src="${image.url}" alt="${image.alt}" width="300"></li>`)
+  .join('');
+
+// Додаємо розмітку до ul.gallery
+gallery.insertAdjacentHTML('beforeend', galleryMarkup);
+
+// Додаємо мінімальне оформлення через CSS
+gallery.style.display = 'flex';
+gallery.style.gap = '10px';
+gallery.style.listStyle = 'none';
